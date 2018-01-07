@@ -1,7 +1,16 @@
 import React from 'react'
 import { render } from 'react-dom'
+import { Provider } from 'react-redux'
 
-const rootElement = document.getElementById('root')
-const App = <h1>Hello world</h1>
+import createStore from './store'
 
-render(App, rootElement)
+const mountElement = document.getElementById('root')
+const store = createStore()
+
+const App = (
+  <Provider store={store}>
+    <h1>Hello world</h1>
+  </Provider>
+)
+
+render(App, mountElement)
