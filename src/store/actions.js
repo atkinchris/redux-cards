@@ -1,10 +1,8 @@
 import shortid from 'shortid'
 
-const addCard = id => ({
+const addCard = card => ({
   type: 'add_card',
-  payload: {
-    id: id || shortid.generate(),
-  },
+  payload: card,
 })
 
 const addCardToDeck = id => ({
@@ -15,7 +13,7 @@ const addCardToDeck = id => ({
 const addCardAndInsert = () => (dispatch) => {
   const id = shortid.generate()
 
-  dispatch(addCard(id))
+  dispatch(addCard({ id, type: 'skeleton' }))
   dispatch(addCardToDeck(id))
 }
 

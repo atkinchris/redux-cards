@@ -3,14 +3,11 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 import { selectTopCards } from '../store/selectors'
+import Card from './Card'
 
 const Cards = ({ cards }) => (
   <div className="c-grid">
-    {
-      cards.map(({ id }) => (
-        <div key={id}>{ id }</div>
-      ))
-    }
+    { cards.map(card => <Card key={card.id} {...card} />) }
   </div>
 )
 

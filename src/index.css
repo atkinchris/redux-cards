@@ -1,6 +1,15 @@
 .c-grid {
-  display: grid;
-  grid-gap: 5px;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  grid-template-rows: repeat(2, 100px);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.c-card {
+  padding: 1em;
+  background-color: antiquewhite;
+}
+
+.c-card + .c-card {
+  margin-left: 1em;
 }
