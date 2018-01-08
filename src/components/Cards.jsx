@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
-import { selectCards } from '../store/selectors'
+import { selectTopCards } from '../store/selectors'
 
 const Cards = ({ cards }) => (
   <div className="c-grid">
@@ -19,7 +19,7 @@ Cards.propTypes = {
 }
 
 const mapStateToProps = state => ({
-  cards: selectCards(state),
+  cards: selectTopCards(state, 3),
 })
 
 export default connect(mapStateToProps)(Cards)

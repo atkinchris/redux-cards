@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
-import { addCard as addCardAction } from '../store/actions'
+import { addCardAndInsert } from '../store/actions'
 
 const Debug = ({ addCard }) => (
   <div>
@@ -15,7 +15,7 @@ Debug.propTypes = {
 }
 
 const mapDispatchToProps = {
-  addCard: addCardAction,
+  addCard: addCardAndInsert,
 }
 
 export default connect(null, mapDispatchToProps)(Debug)
