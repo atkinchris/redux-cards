@@ -7,6 +7,8 @@ const deckReducer = (state = [], action) => {
         ...state,
         payload,
       ]
+    case 'remove_card_from_deck':
+      return state.filter(id => id !== payload)
     default:
       return state
   }

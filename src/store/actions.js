@@ -10,6 +10,11 @@ const addCardToDeck = id => ({
   payload: id,
 })
 
+const removeCardFromDeck = id => ({
+  type: 'remove_card_from_deck',
+  payload: id,
+})
+
 const addCardAndInsert = () => (dispatch) => {
   const id = shortid.generate()
 
@@ -17,8 +22,13 @@ const addCardAndInsert = () => (dispatch) => {
   dispatch(addCardToDeck(id))
 }
 
+const chooseCard = id => (dispatch) => {
+  dispatch(removeCardFromDeck(id))
+}
+
 export {
   addCard,
   addCardToDeck,
   addCardAndInsert,
+  chooseCard,
 }

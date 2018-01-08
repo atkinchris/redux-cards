@@ -3,21 +3,16 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 
 import createStore from './store'
-import Cards from './components/Cards'
-import Debug from './components/Debug'
+import App from './components/App'
 
 import './index.css'
 
 const mountElement = document.getElementById('root')
 const store = createStore()
 
-const App = (
+render(
   <Provider store={store}>
-    <div>
-      <Cards />
-      <Debug />
-    </div>
-  </Provider>
+    <App />
+  </Provider>,
+  mountElement,
 )
-
-render(App, mountElement)
