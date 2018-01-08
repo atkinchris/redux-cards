@@ -6,6 +6,8 @@ import createStore from './store'
 import Cards from './components/Cards'
 import Debug from './components/Debug'
 
+import './index.css'
+
 const mountElement = document.getElementById('root')
 const store = createStore()
 

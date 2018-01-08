@@ -5,8 +5,12 @@ import { connect } from 'react-redux'
 import { selectCards } from '../store/selectors'
 
 const Cards = ({ cards }) => (
-  <div>
-    <pre>{ JSON.stringify(cards) }</pre>
+  <div className="c-grid">
+    {
+      cards.map(({ id }) => (
+        <div key={id}>{ id }</div>
+      ))
+    }
   </div>
 )
 
