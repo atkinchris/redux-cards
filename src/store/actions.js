@@ -1,5 +1,8 @@
 import shortid from 'shortid'
 
+import { selectCard } from './selectors'
+import cardActions from './cardActions'
+
 const addCard = card => ({
   type: 'add_card',
   payload: card,
@@ -22,13 +25,19 @@ const addCardAndInsert = () => (dispatch) => {
   dispatch(addCardToDeck(id))
 }
 
-const chooseCard = id => (dispatch) => {
-  dispatch(removeCardFromDeck(id))
+const chooseCard = id => (dispatch, getState) => {
+  const state = getState()
+  const card = selectCard(state, id)
+  const { type } = card
+  const action = cardActions[type]
+
+  dispatch(action(card))
 }
 
 export {
   addCard,
   addCardToDeck,
+  removeCardFromDeck,
   addCardAndInsert,
   chooseCard,
 }
