@@ -2,20 +2,18 @@ import React from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
-import { addCardAndInsert } from '../store/actions'
+import * as actions from '../store/actions'
 
-const Debug = ({ addCard }) => (
+const Debug = ({ addCreature, addItem }) => (
   <div>
-    <button onClick={addCard}>Add Card</button>
+    <button onClick={addCreature}>Add Creature</button>
+    <button onClick={addItem}>Add Item</button>
   </div>
 )
 
 Debug.propTypes = {
-  addCard: PropTypes.func.isRequired,
+  addCreature: PropTypes.func.isRequired,
+  addItem: PropTypes.func.isRequired,
 }
 
-const mapDispatchToProps = {
-  addCard: addCardAndInsert,
-}
-
-export default connect(null, mapDispatchToProps)(Debug)
+export default connect(null, actions)(Debug)

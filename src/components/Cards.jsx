@@ -2,18 +2,16 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
-import { selectTopCards } from '../store/selectors'
-import { chooseCard as chooseCardAction } from '../store/actions'
+import { selectHand } from '../store/selectors'
 import Card from './Card'
 
-const Cards = ({ cards, chooseCard }) => (
+const Cards = ({ cards }) => (
   <div className="c-grid">
     {
       cards.map(card => (
         <Card
-          {...card}
           key={card.id}
-          onClick={() => chooseCard(card.id)}
+          {...card}
         />
       ))
   }
@@ -21,16 +19,13 @@ const Cards = ({ cards, chooseCard }) => (
 )
 
 Cards.propTypes = {
-  cards: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
-  chooseCard: PropTypes.func.isRequired,
+  cards: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
+  })).isRequired,
 }
 
 const mapStateToProps = state => ({
-  cards: selectTopCards(state, 3),
+  cards: selectHand(state),
 })
 
-const mapDispatchToProps = {
-  chooseCard: chooseCardAction,
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Cards)
+export default connect(mapStateToProps)(Cards)

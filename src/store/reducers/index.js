@@ -1,11 +1,13 @@
 import { combineReducers } from 'redux'
 
 import cards from './cards'
-import deck from './deck'
+import stacks from './stacks'
+import player from './player'
 
 const rootReducer = () => combineReducers({
   cards,
-  deck,
+  stacks,
+  player,
 })
 
 export default rootReducer
