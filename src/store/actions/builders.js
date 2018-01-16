@@ -2,11 +2,15 @@ import shortid from 'shortid'
 
 import { addCard } from './index'
 
-const buildCard = data => ({
+const buildCard = data => addCard({
   id: shortid.generate(),
-  type: null,
   ...data,
 })
 
-export const addCreature = () => addCard(buildCard({ type: 'creature' }))
-export const addItem = () => addCard(buildCard({ type: 'item' }))
+export const addCreature = () => buildCard({
+  type: 'creature',
+  health: 3,
+  attack: 1,
+})
+
+export const addItem = () => buildCard({ type: 'item' })

@@ -1,7 +1,7 @@
 import { bindActionCreators } from 'redux'
 
 import { ADD_CARD, MOVE_CARD, UPDATE_CARD, UPDATE_PLAYER } from '../types'
-import { selectDeck, selectCard } from '../selectors'
+import { selectDeck, selectCard, selectPlayer } from '../selectors'
 import runBehaviours from '../behaviours'
 
 const addCard = payload => ({ type: ADD_CARD, payload })
@@ -26,9 +26,12 @@ const playCard = ({ id }) => (dispatch, getState) => {
     moveCard,
     updateCard,
     updatePlayer,
-  })
+  }, dispatch)
+  const selectors = {
+    getPlayer: () => selectPlayer(state),
+  }
 
-  runBehaviours(card, actions)
+  runBehaviours(card, { ...actions, ...selectors })
 }
 
 export {

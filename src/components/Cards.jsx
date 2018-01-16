@@ -13,7 +13,7 @@ const Cards = ({ cards, playCard }) => (
         <Card
           key={card.id}
           onClick={() => playCard(card)}
-          {...card}
+          card={card}
         />
       ))
   }
