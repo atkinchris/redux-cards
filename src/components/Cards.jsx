@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
-import { selectHand } from '../store/selectors'
+import { selectHand, selectCards } from '../store/selectors'
 import Card from './Card'
 
 const Cards = ({ cards }) => (
@@ -25,7 +25,7 @@ Cards.propTypes = {
 }
 
 const mapStateToProps = state => ({
-  cards: selectHand(state),
+  cards: selectCards(state, selectHand(state)),
 })
 
 export default connect(mapStateToProps)(Cards)
