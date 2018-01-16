@@ -1,5 +1,8 @@
+import { bindActionCreators } from 'redux'
+
 import { ADD_CARD, MOVE_CARD, UPDATE_CARD, UPDATE_PLAYER } from '../types'
-import { selectDeck } from '../selectors'
+import { selectDeck, selectCard } from '../selectors'
+import runBehaviours from '../behaviours'
 
 const addCard = payload => ({ type: ADD_CARD, payload })
 const moveCard = payload => ({ type: MOVE_CARD, payload })
@@ -15,12 +18,26 @@ const drawCard = () => (dispatch, getState) => {
   dispatch(action)
 }
 
+const playCard = ({ id }) => (dispatch, getState) => {
+  const state = getState()
+  const card = selectCard(state, id)
+  const actions = bindActionCreators({
+    addCard,
+    moveCard,
+    updateCard,
+    updatePlayer,
+  })
+
+  runBehaviours(card, actions)
+}
+
 export {
   addCard,
   moveCard,
   updateCard,
   updatePlayer,
   drawCard,
+  playCard,
 }
 
 export * from './builders'

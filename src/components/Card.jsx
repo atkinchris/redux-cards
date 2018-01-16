@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Card = ({ id, type }) => (
-  <button className="c-card">
+const Card = ({ id, type, onClick }) => (
+  <button className="c-card" onClick={onClick}>
     { `${type} (${id})` }
   </button>
 )
@@ -10,6 +10,7 @@ const Card = ({ id, type }) => (
 Card.propTypes = {
   id: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
 }
 
 export default Card
