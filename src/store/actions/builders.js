@@ -9,6 +9,7 @@ const buildCard = data => addCard({
 
 const addCreature = () => buildCard({
   type: 'creature',
+  name: 'Creature',
   health: 3,
   attack: 1,
   damage: 0,

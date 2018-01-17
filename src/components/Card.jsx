@@ -3,8 +3,17 @@ import PropTypes from 'prop-types'
 
 const Card = ({ card, onClick }) => (
   <button className="c-card" onClick={onClick}>
-    <div>
-      { `${card.attack} / ${card.health - card.damage}` }
+    <div className="c-card__inner">
+      { card.id }
+    </div>
+    <div className="c-card__value c-card__value--top">
+      { card.name }
+    </div>
+    <div className="c-card__value c-card__value--bottom-left">
+      { card.health - card.damage }
+    </div>
+    <div className="c-card__value c-card__value--bottom-right">
+      { card.attack }
     </div>
   </button>
 )
