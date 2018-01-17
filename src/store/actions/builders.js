@@ -7,10 +7,22 @@ const buildCard = data => addCard({
   ...data,
 })
 
-export const addCreature = () => buildCard({
+const addCreature = () => buildCard({
   type: 'creature',
   health: 3,
   attack: 1,
 })
 
-export const addItem = () => buildCard({ type: 'item' })
+const addItem = () => buildCard({ type: 'item' })
+
+const buildDeck = () => (dispatch) => {
+  [
+    ...Array(15).fill(addCreature),
+  ].forEach(fn => dispatch(fn()))
+}
+
+export {
+  addCreature,
+  addItem,
+  buildDeck,
+}
