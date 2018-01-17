@@ -6,8 +6,8 @@ import * as actions from '../store/actions'
 
 const Debug = ({ addCreature, addItem }) => (
   <div className="c-debug-panel">
-    <button onClick={addCreature}>Add Creature</button>
-    <button onClick={addItem}>Add Item</button>
+    <button className="c-debug-button" onClick={addCreature}>Add Creature</button>
+    <button className="c-debug-button" onClick={addItem}>Add Item</button>
   </div>
 )
 

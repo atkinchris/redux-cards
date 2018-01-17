@@ -11,6 +11,7 @@ const addCreature = () => buildCard({
   type: 'creature',
   health: 3,
   attack: 1,
+  damage: 0,
 })
 
 const addItem = () => buildCard({ type: 'item' })

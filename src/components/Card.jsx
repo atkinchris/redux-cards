@@ -3,7 +3,9 @@ import PropTypes from 'prop-types'
 
 const Card = ({ card, onClick }) => (
   <button className="c-card" onClick={onClick}>
-    <pre>{ JSON.stringify(card, null, '\t') }</pre>
+    <div>
+      { `${card.attack} / ${card.health - card.damage}` }
+    </div>
   </button>
 )
 

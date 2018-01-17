@@ -38,7 +38,11 @@ pre {
 
 .c-card {
   padding: 1em;
-  background-color: antiquewhite;
+  font-size: 2rem;
+  background-color: #EEE;
+  border: none;
+  border-radius: 5%;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .c-card + .c-card {
@@ -48,6 +52,16 @@ pre {
 .c-debug-panel {
   position: absolute;
   bottom: 0;
+}
+
+.c-debug-button {
+  border: none;
+  background-color: #FEE;
+  padding: 0.5rem;
+}
+
+.c-debug-button + .c-debug-button {
+  margin-left: 1rem;
 }
 
 .c-player {
