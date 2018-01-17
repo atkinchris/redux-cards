@@ -6,7 +6,7 @@ import Debug from './Debug'
 import Deck from './Deck'
 
 const App = () => (
-  <div>
+  <div className="site-wrap">
     <Player />
     <Deck />
     <Debug />

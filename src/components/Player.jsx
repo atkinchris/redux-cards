@@ -5,8 +5,8 @@ import { connect } from 'react-redux'
 import { selectPlayer } from '../store/selectors'
 
 const Player = ({ player }) => (
-  <div>
-    <pre>{ JSON.stringify(player) }</pre>
+  <div className="c-player">
+    <span>{ `Health: ${player.health - player.damage}` }</span>
   </div>
 )
 

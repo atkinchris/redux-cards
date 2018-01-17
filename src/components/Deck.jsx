@@ -4,13 +4,13 @@ import { connect } from 'react-redux'
 import { selectDeck } from '../store/selectors'
 
 const Deck = ({ deck }) => (
-  <div>
+  <div className="c-deck">
     { `Deck size: ${deck.length}`}
   </div>
 )
 
 Deck.propTypes = {
-  deck: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+  deck: PropTypes.arrayOf(PropTypes.string).isRequired,
 }
 
 const mapStateToProps = state => ({

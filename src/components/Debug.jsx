@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import * as actions from '../store/actions'
 
 const Debug = ({ addCreature, addItem }) => (
-  <div>
+  <div className="c-debug-panel">
     <button onClick={addCreature}>Add Creature</button>
     <button onClick={addItem}>Add Item</button>
   </div>
