@@ -1,0 +1,2 @@
+#root,.site-wrap,body,html{height:100%;width:100%;padding:0;margin:0}*{box-sizing:border-box}pre{margin:0}#root{padding:1rem}.site-wrap{position:relative;flex-direction:column;justify-content:center}.c-grid,.site-wrap{display:flex;align-items:center}.c-grid{flex-direction:row;justify-content:flex-start;max-width:600px}.c-card{padding:1em;background-color:#faebd7}.c-card+.c-card{margin-left:1em}.c-debug-panel{position:absolute;bottom:0}.c-player{left:0}.c-deck,.c-player{position:absolute;top:0}.c-deck{right:0}
+/*# sourceMappingURL=main.af258366.css.map*/
