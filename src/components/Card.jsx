@@ -3,17 +3,10 @@ import PropTypes from 'prop-types'
 
 const Card = ({ card, onClick }) => (
   <button className="c-card" onClick={onClick}>
-    <div className="c-card__inner">
-      { card.id }
-    </div>
-    <div className="c-card__value c-card__value--top">
-      { card.name }
-    </div>
-    <div className="c-card__value c-card__value--bottom-left">
-      { card.health - card.damage }
-    </div>
-    <div className="c-card__value c-card__value--bottom-right">
-      { card.attack }
+    { card.id }
+    <div className="c-card-values">
+      <div className="c-card-values__value">{ card.health - card.damage }</div>
+      <div className="c-card-values__value">{ card.attack }</div>
     </div>
   </button>
 )
