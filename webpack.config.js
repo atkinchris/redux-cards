@@ -32,6 +32,9 @@ const common = {
         fallback: 'style-loader',
         use: ['css-loader'],
       }),
+    }, {
+      test: /\.(png|jpg|gif)$/,
+      use: 'url-loader',
     }],
   },
   resolve: {
