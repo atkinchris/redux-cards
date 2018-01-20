@@ -46,7 +46,7 @@ pre {
   min-height: 140px;
   width: 30vw;
   height: 40vw;
-  font-size: 2vw;
+  font-size: 1em;
   background-color: #BDD4DE;
   border: 1.2em solid #EFEFEF;
   border-radius: 10px;
@@ -67,7 +67,7 @@ pre {
   right: 0;
 }
 
-.c-card-values__value {
+.c-card-value {
   font-weight: bold;
   font-size: 2em;
   display: inline-block;
@@ -76,6 +76,23 @@ pre {
   line-height: 1.8em;
   text-align: center;
   margin-right: 0.5em;
+}
+
+.c-card-value__inner {
+  display: inline-block;
+}
+
+.changed .c-card-value__inner {
+  animation: pop .3s cubic-bezier(0.175, 0.885, 0.320, 1.275)
+}
+
+@keyframes pop {
+  0%, 100% {
+    transform: scale(1.0);
+  }
+  50% {
+    transform: scale(1.5);
+  }
 }
 
 .c-debug-panel {
