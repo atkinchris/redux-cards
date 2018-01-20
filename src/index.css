@@ -56,6 +56,11 @@ pre {
   margin-left: 1em;
 }
 
+.c-card-text {
+  font-family: 'Raleway', sans-serif;
+  font-size: 2em;
+}
+
 .c-card-values {
   position: absolute;
   top: -2px;
