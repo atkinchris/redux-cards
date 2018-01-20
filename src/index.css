@@ -20,7 +20,7 @@ pre {
 }
 
 #root {
-  padding: 1rem;
+  padding: 2vw;
 }
 
 .site-wrap {
@@ -42,33 +42,35 @@ pre {
   position: relative;
   max-height: 350px;
   max-width: 300px;
+  min-width: 120px;
+  min-height: 140px;
   width: 30vw;
   height: 40vw;
+  font-size: 2vw;
   background-color: #BDD4DE;
-  border: 1rem solid #EFEFEF;
-  padding: 1rem;
+  border: 1.2em solid #EFEFEF;
   border-radius: 10px;
 }
 
 .c-card + .c-card {
-  margin-left: 1rem;
+  margin-left: 1em;
 }
 
 .c-card-values {
   position: absolute;
-  top: 0;
+  top: -2px;
   right: 0;
 }
 
 .c-card-values__value {
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 2em;
   display: inline-block;
   background-color: #EFEFEF;
-  width: 2rem;
-  line-height: 3.2rem;
+  width: 1.2em;
+  line-height: 1.8em;
   text-align: center;
-  margin-right: 1rem;
+  margin-right: 0.5em;
 }
 
 .c-debug-panel {
