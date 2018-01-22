@@ -5,8 +5,7 @@ const Card = ({ card, onClick }) => (
   <button className="c-card" onClick={onClick}>
     <div className="c-card-text">
       <div>{ card.name }</div>
-      <div>Health: { card.health - card.damage }</div>
-      <div>Attack: { card.attack }</div>
+      <pre>{ JSON.stringify(card, null, '  ') }</pre>
     </div>
   </button>
 )

@@ -1,4 +1,5 @@
-import { ADD_CARD, MOVE_CARD } from '../types'
+import { ADD_CARD, MOVE_CARD, SHUFFLE_STACK } from '../types'
+import shuffle from '../utils/shuffle'
 
 const DEFAULT_STATE = {
   deck: [],
@@ -27,6 +28,14 @@ const stacksReducer = (state = DEFAULT_STATE, action) => {
       newStacks[destination].push(card.id)
 
       return newStacks
+    }
+    case SHUFFLE_STACK: {
+      const { stack } = payload
+
+      return {
+        ...state,
+        [stack]: shuffle(state[stack]),
+      }
     }
     default:
       return state

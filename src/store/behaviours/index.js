@@ -15,6 +15,13 @@ const runBehaviours = (card, actions) => {
       })
     }
   }
+
+  if (type === 'potion') {
+    const newDamage = player.damage - card.healing
+
+    updatePlayer({ damage: newDamage < 0 ? 0 : newDamage })
+    moveCard({ card, destination: 'discard' })
+  }
 }
 
 export default runBehaviours

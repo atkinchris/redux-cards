@@ -18,6 +18,7 @@ body,
 
 pre {
   margin: 0;
+  text-align: left !important;
 }
 
 #root {

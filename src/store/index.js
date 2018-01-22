@@ -3,7 +3,7 @@ import thunk from 'redux-thunk'
 
 import rootReducer from './reducers'
 import registerSubscribers from './subscribers'
-import { buildDeck } from './actions/builders'
+import { buildDeck, drawCard } from './actions'
 
 const buildStore = () => {
   const middleware = compose(
@@ -15,6 +15,10 @@ const buildStore = () => {
   registerSubscribers(store)
 
   store.dispatch(buildDeck())
+
+  for (let index = 0; index < 3; index += 1) {
+    store.dispatch(drawCard())
+  }
 
   return store
 }

@@ -1,6 +1,6 @@
 import shortid from 'shortid'
 
-import { addCard } from './index'
+import { addCard, shuffleStack } from './index'
 
 const buildCard = data => addCard({
   id: shortid.generate(),
@@ -15,16 +15,22 @@ const addCreature = () => buildCard({
   damage: 0,
 })
 
-const addItem = () => buildCard({ type: 'item' })
+const addPotion = () => buildCard({
+  type: 'potion',
+  name: 'Potion',
+  healing: 3,
+})
 
 const buildDeck = () => (dispatch) => {
   [
     ...Array(15).fill(addCreature),
+    ...Array(5).fill(addPotion),
   ].forEach(fn => dispatch(fn()))
+  dispatch(shuffleStack({ stack: 'deck' }))
 }
 
 export {
   addCreature,
-  addItem,
+  addPotion,
   buildDeck,
 }
