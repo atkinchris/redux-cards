@@ -9,6 +9,7 @@ body,
   background: radial-gradient(transparent, rgba(0, 0, 0, 0.5)), #2B3A42;
   color: #3F5765;
   font-family: 'Roboto', sans-serif;
+  font-size: 16px;
 }
 
 * {
@@ -46,53 +47,13 @@ pre {
   min-height: 140px;
   width: 30vw;
   height: 40vw;
-  font-size: 1em;
-  background-color: #BDD4DE;
-  border: 1.2em solid #EFEFEF;
+  font-size: 1rem;
+  background-color: #EFEFEF;
   border-radius: 10px;
 }
 
 .c-card + .c-card {
   margin-left: 1em;
-}
-
-.c-card-text {
-  font-family: 'Raleway', sans-serif;
-  font-size: 2em;
-}
-
-.c-card-values {
-  position: absolute;
-  top: -2px;
-  right: 0;
-}
-
-.c-card-value {
-  font-weight: bold;
-  font-size: 2em;
-  display: inline-block;
-  background-color: #EFEFEF;
-  width: 1.2em;
-  line-height: 1.8em;
-  text-align: center;
-  margin-right: 0.5em;
-}
-
-.c-card-value__inner {
-  display: inline-block;
-}
-
-.changed .c-card-value__inner {
-  animation: pop .3s cubic-bezier(0.175, 0.885, 0.320, 1.275)
-}
-
-@keyframes pop {
-  0%, 100% {
-    transform: scale(1.0);
-  }
-  50% {
-    transform: scale(1.5);
-  }
 }
 
 .c-debug-panel {

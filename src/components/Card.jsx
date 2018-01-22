@@ -1,19 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import CardValue from './CardValue'
-import AnimateOnProps from './AnimateOnProps'
-
-const AnimatedValue = AnimateOnProps(CardValue)
-
 const Card = ({ card, onClick }) => (
   <button className="c-card" onClick={onClick}>
     <div className="c-card-text">
-      { card.name }
-    </div>
-    <div className="c-card-values">
-      <AnimatedValue>{ card.health - card.damage }</AnimatedValue>
-      <CardValue>{ card.attack }</CardValue>
+      <div>{ card.name }</div>
+      <div>Health: { card.health - card.damage }</div>
+      <div>Attack: { card.attack }</div>
     </div>
   </button>
 )
