@@ -4,14 +4,14 @@ import { connect } from 'react-redux'
 
 import { selectPlayer, selectDeck } from '../store/selectors'
 
-const Info = ({ player, deck }) => (
-  <div className="flex">
-    <div>Health: { player.health - player.damage }</div>
-    <div>Deck: { deck.length }</div>
+const InfoPanel = ({ player, deck }) => (
+  <div className="flex info-panel">
+    <div className="info-panel__element">Health: { player.health - player.damage }</div>
+    <div className="info-panel__element">Deck: { deck.length }</div>
   </div>
 )
 
-Info.propTypes = {
+InfoPanel.propTypes = {
   player: PropTypes.shape({
     health: PropTypes.number.isRequired,
     damage: PropTypes.number.isRequired,
@@ -24,4 +24,4 @@ const mapStateToProps = state => ({
   deck: selectDeck(state),
 })
 
-export default connect(mapStateToProps)(Info)
+export default connect(mapStateToProps)(InfoPanel)

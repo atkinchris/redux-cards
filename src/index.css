@@ -19,14 +19,13 @@ pre {
 }
 
 #root {
-  padding: 2vw;
+  padding: 2rem;
 }
 
 .site-wrap {
   background: #f4f4f4;
   height: 100%;
   width: 100%;
-  position: relative;
 }
 
 .flex {
@@ -41,11 +40,12 @@ pre {
 }
 
 .card {
-  position: relative;
   width: 25vw;
   height: 35vw;
   min-width: 125px;
   min-height: 175px;
+  max-height: 350px;
+  max-width: 250px;
   padding: 0.5rem;
   font-size: 1rem;
   background-color: #FFFFFF;
@@ -59,7 +59,20 @@ pre {
 }
 
 .card + .card {
-  margin-left: 1em;
+  margin-left: 2rem;
+}
+
+.info-panel {
+  margin-top: 2rem;
+}
+
+.info-panel__element {
+  padding: 1rem;
+  background: #FFFFFF;
+}
+
+.info-panel__element + .info-panel__element {
+  margin-left: 2rem;
 }
 
 .debug-panel {
