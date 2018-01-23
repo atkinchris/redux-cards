@@ -18,10 +18,6 @@ pre {
   text-align: left !important;
 }
 
-#root {
-  padding: 2rem;
-}
-
 .site-wrap {
   background: #f4f4f4;
   height: 100%;
@@ -37,6 +33,12 @@ pre {
 
 .flex--column {
   flex-direction: column;
+}
+
+.hand {
+  min-height: 175px;
+  max-height: 350px;
+  height: 35vw;
 }
 
 .card {
@@ -66,13 +68,28 @@ pre {
   margin-top: 2rem;
 }
 
-.info-panel__element {
+.info-element {
   padding: 1rem;
   background: #FFFFFF;
 }
 
-.info-panel__element + .info-panel__element {
+.info-element + .info-element {
   margin-left: 2rem;
+}
+
+.info-element--health {
+  color: red;
+}
+
+.info-element--health::before {
+  content: '♥';
+  margin-right: 0.5rem;
+  line-height: 1rem;
+}
+
+.button-standalone {
+  border: none;
+  font-size: 1rem;
 }
 
 .debug-panel {

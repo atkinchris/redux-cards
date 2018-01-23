@@ -1,8 +1,9 @@
 import { bindActionCreators } from 'redux'
 
 import { ADD_CARD, MOVE_CARD, UPDATE_CARD, UPDATE_PLAYER, SHUFFLE_STACK } from '../types'
-import { selectDeck, selectCard, selectPlayer } from '../selectors'
+import { selectDeck, selectHand, selectCard, selectPlayer } from '../selectors'
 import runBehaviours from '../behaviours'
+import { MAX_HAND_SIZE } from '../constants'
 
 const addCard = payload => ({ type: ADD_CARD, payload })
 const moveCard = payload => ({ type: MOVE_CARD, payload })
@@ -23,6 +24,19 @@ const drawCard = () => (dispatch, getState) => {
   const action = moveCard({ card: { id }, destination: 'hand' })
 
   dispatch(action)
+}
+
+const fillHand = () => (dispatch, getState) => {
+  const getHandSize = () => selectHand(getState()).length
+
+  if (getHandSize() >= MAX_HAND_SIZE) {
+    console.log('Could not draw cards - hand at max') // eslint-disable-line no-console
+    return
+  }
+
+  while (getHandSize() < MAX_HAND_SIZE) {
+    dispatch(drawCard())
+  }
 }
 
 const playCard = ({ id }) => (dispatch, getState) => {
@@ -48,6 +62,7 @@ export {
   updatePlayer,
   shuffleStack,
   drawCard,
+  fillHand,
   playCard,
 }
 
