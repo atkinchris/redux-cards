@@ -22,21 +22,25 @@ pre {
   padding: 2vw;
 }
 
-.c-site-wrap {
+.site-wrap {
   background: #f4f4f4;
   height: 100%;
   width: 100%;
   position: relative;
 }
 
-.c-flex {
+.flex {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 }
 
-.c-card {
+.flex--column {
+  flex-direction: column;
+}
+
+.card {
   position: relative;
   width: 25vw;
   height: 35vw;
@@ -47,41 +51,29 @@ pre {
   background-color: #FFFFFF;
   border: none;
   /* border-radius: 1rem; */
-  transition: transform 0.25s cubic-bezier(0, 0.5, 1, 1);
+  transition: transform 0.25s cubibezier(0, 0.5, 1, 1);
 }
 
-.c-card:hover {
+.card:hover {
   transform: translateY(-0.5rem);
 }
 
-.c-card + .c-card {
+.card + .card {
   margin-left: 1em;
 }
 
-.c-debug-panel {
+.debug-panel {
   display: none;
   position: absolute;
   bottom: 0;
 }
 
-.c-debug-button {
+.debug-button {
   border: none;
   background-color: #FF530D;
   padding: 0.5rem;
 }
 
-.c-debug-button + .c-debug-button {
+.debug-button + .debug-button {
   margin-left: 1rem;
-}
-
-.c-player {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.c-deck {
-  position: absolute;
-  top: 0;
-  right: 0;
 }

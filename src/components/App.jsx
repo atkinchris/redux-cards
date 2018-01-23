@@ -1,16 +1,14 @@
 import React from 'react'
 
-import Player from './Player'
 import Cards from './Cards'
+import Info from './Info'
 import Debug from './Debug'
-import Deck from './Deck'
 
 const App = () => (
-  <div className="c-site-wrap c-flex">
-    <Player />
-    <Deck />
-    <Debug />
+  <div className="site-wrap flex flex--column">
     <Cards />
+    <Info />
+    <Debug />
   </div>
 )
 

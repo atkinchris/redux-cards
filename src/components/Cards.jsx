@@ -7,7 +7,7 @@ import { selectHand, selectCards } from '../store/selectors'
 import Card from './Card'
 
 const Cards = ({ cards, playCard }) => (
-  <div className="c-flex">
+  <div className="flex">
     {
       cards.map(card => (
         <Card

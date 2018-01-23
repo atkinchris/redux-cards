@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const Card = ({ card, onClick }) => (
-  <button className="c-card" onClick={onClick}>
-    <div className="c-card-text">
+  <button className="card" onClick={onClick}>
+    <div className="card-text">
       <pre>{ JSON.stringify(card, null, '  ') }</pre>
     </div>
   </button>
