@@ -6,7 +6,7 @@ import Debug from './Debug'
 import Deck from './Deck'
 
 const App = () => (
-  <div className="site-wrap">
+  <div className="c-site-wrap c-flex">
     <Player />
     <Deck />
     <Debug />

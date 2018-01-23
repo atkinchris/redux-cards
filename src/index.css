@@ -1,13 +1,10 @@
 html,
 body,
-#root,
-.site-wrap {
+#root {
   height: 100%;
   width: 100%;
   padding: 0;
   margin: 0;
-  background: radial-gradient(transparent, rgba(0, 0, 0, 0.5)), #2B3A42;
-  color: #3F5765;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
 }
@@ -25,32 +22,36 @@ pre {
   padding: 2vw;
 }
 
-.site-wrap {
+.c-site-wrap {
+  background: #f4f4f4;
+  height: 100%;
+  width: 100%;
   position: relative;
+}
+
+.c-flex {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
 }
 
-.c-grid {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-}
-
 .c-card {
   position: relative;
-  max-height: 350px;
-  max-width: 300px;
-  min-width: 120px;
-  min-height: 140px;
-  width: 30vw;
-  height: 40vw;
+  width: 25vw;
+  height: 35vw;
+  min-width: 125px;
+  min-height: 175px;
+  padding: 0.5rem;
   font-size: 1rem;
-  background-color: #EFEFEF;
-  border-radius: 10px;
+  background-color: #FFFFFF;
+  border: none;
+  /* border-radius: 1rem; */
+  transition: transform 0.25s cubic-bezier(0, 0.5, 1, 1);
+}
+
+.c-card:hover {
+  transform: translateY(-0.5rem);
 }
 
 .c-card + .c-card {
@@ -58,6 +59,7 @@ pre {
 }
 
 .c-debug-panel {
+  display: none;
   position: absolute;
   bottom: 0;
 }
@@ -73,14 +75,12 @@ pre {
 }
 
 .c-player {
-  color: #EFEFEF;
   position: absolute;
   top: 0;
   left: 0;
 }
 
 .c-deck {
-  color: #EFEFEF;
   position: absolute;
   top: 0;
   right: 0;
